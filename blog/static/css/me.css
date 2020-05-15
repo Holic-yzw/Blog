@@ -3,6 +3,10 @@
     padding-top: 0.2em !important;
     padding-bottom: 0.2em !important;
 }
+
+.m-padded-mini{
+    padding: 0.2em !important;
+}
 /*增加块上下的宽度*/
 .m-padded-td-large{
     padding-top: 2em !important;
@@ -25,6 +29,17 @@
 .m-text-thin{
     font-weight: 300 !important;
 }
+/*字号*/
+.m-text-size{
+    font-size: small !important;
+}
+/*段落属性*/
+.m-text{
+    font-weight: 300 !important;
+    letter-spacing: 1px !important;
+    line-height: 1.8;
+}
+
 .m-text-spaced{
     letter-spacing: 1px !important;
 }
@@ -37,4 +52,9 @@
 /*展示属性*/
 .m-inline-block{
     display: inline-block !important;
+}
+
+.m-container{
+    max-width: 72em !important;
+    margin: auto !important;
 }
