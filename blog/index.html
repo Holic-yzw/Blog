@@ -12,13 +12,15 @@
 <!--导航)-->
 <nav class="ui inverted attached segment m-padded-td-mini" >
     <div class="ui container">
-        <div class="ui inverted secondary menu">
+        <!--stackable 可堆叠的，屏幕宽度不够时会自动上下叠起来-->
+        <div class="ui inverted secondary menu stackable">
             <h2 class="ui green header item">Blog</h2>
-            <a href="#" class="item"><i class="home icon"></i>首页</a>
-            <a href="#" class="item"><i class="idea icon"></i>分类</a>
-            <a href="#" class="item"><i class="tags icon"></i>标签</a>
-            <a href="#" class="item"><i class="info icon"></i>关于我</a>
-            <div class="right item">
+            <a href="#" class="m-item item m-mobile-hide"><i class=" home icon"></i>首页</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="  idea icon"></i>分类</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class=" tags icon"></i>标签</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class=" clone icon"></i>归档</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class=" info icon"></i>关于我</a>
+            <div class="right m-item  item m-mobile-hide">
                 <div class="ui icon inverted transparent input">
                     <input type="text" placeholder="Search....">
                     <i class="search link icon"></i>
@@ -26,12 +28,15 @@
             </div>
         </div>
     </div>
+    <a href="#"  class="ui black icon button m-top-right m-mobile-show menu toggle">
+        <i class="sidebar icon"></i>
+    </a>
 </nav>
 
 <!--中间内容-->
 <div class=" m-container m-padded-td-large">
     <div class="ui container ">
-        <div class="ui grid">
+        <div class="ui stackable grid">
             <!--左边部分-->
             <div class="eleven wide column">
                 <!--顶部横条-->
@@ -48,38 +53,8 @@
                 <!--主体内容-->
                 <div class="ui attached segment">
                     <div class="ui padded vertical segment m-padded-td-large">
-                        <div class="ui grid">
-                            <div class="eleven wide column">
-                                <!--博客标题-->
-                                <h3 class="ui header">你能感受到痛苦吗</h3>
-                                <!--博客内容摘要-->
-                                <p class="m-text">很多球迷都说库里的职业生涯是完美的，在自己的巅峰期遇到了科尔这样优秀的教练，还拥有汤普森、格林和杜兰特这么多优秀的队友，在这些人的共同努力下他们一起赢得了三个总冠军，那几年的NBA就是勇士这支球队的天下。但也有一些人表示库里的职业生涯</p>
-                                <div class="ui grid">
-                                    <div class="ui eleven wide column">
-                                                                               <!--link list 组件默认是竖起来的，horizontal表示水平的，其子组件包含一个item的属性-->
-                                        <div class="ui horizontal mini link list">
-                                            <div class="item">
-                                                <img src="https://picsum.photos/id/1001/100/150" class="ui avatar image">
-                                                <div class="ui content"><div class="ui header m-text-size">Holic</div> </div>
-                                            </div>
-                                            <div class="item"><i class="icon calendar"></i>2020-02-15 </div>
-                                            <div class="item"><i class="eye icon"></i>200 </div>
-                                        </div>
-                                    </div>
-                                    <div class="ui right aligned five wide column">
-                                        <a href="#" target="_blank" class="ui label teal basic m-padded-mini m-text-thin">认知提升</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="five wide middle aligned column">
-                                <a href="#" target="_blank">
-                                    <img src="https://picsum.photos/id/1001/800/450" class="ui rounded image">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ui padded vertical segment m-padded-td-large">
-                        <div class="ui grid">
+                        <!--mobile reversed 当分辨率为手机时，两个div会上下换位-->
+                        <div class="ui grid stackable mobile reversed">
                             <div class="eleven wide column">
                                 <!--博客标题-->
                                 <h3 class="ui header">你能感受到痛苦吗</h3>
@@ -110,7 +85,7 @@
                         </div>
                     </div>
                     <div class="ui padded vertical segment m-padded-td-large">
-                        <div class="ui grid">
+                        <div class="ui grid stackable mobile reversed">
                             <div class="eleven wide column">
                                 <!--博客标题-->
                                 <h3 class="ui header">你能感受到痛苦吗</h3>
@@ -141,7 +116,7 @@
                         </div>
                     </div>
                     <div class="ui padded vertical segment m-padded-td-large">
-                        <div class="ui grid">
+                        <div class="ui grid stackable mobile reversed">
                             <div class="eleven wide column">
                                 <!--博客标题-->
                                 <h3 class="ui header">你能感受到痛苦吗</h3>
@@ -172,7 +147,7 @@
                         </div>
                     </div>
                     <div class="ui padded vertical segment m-padded-td-large">
-                        <div class="ui grid">
+                        <div class="ui grid stackable mobile reversed">
                             <div class="eleven wide column">
                                 <!--博客标题-->
                                 <h3 class="ui header">你能感受到痛苦吗</h3>
@@ -203,7 +178,7 @@
                         </div>
                     </div>
                     <div class="ui padded vertical segment m-padded-td-large">
-                        <div class="ui grid">
+                        <div class="ui grid stackable mobile reversed">
                             <div class="eleven wide column">
                                 <!--博客标题-->
                                 <h3 class="ui header">你能感受到痛苦吗</h3>
@@ -233,7 +208,38 @@
                             </div>
                         </div>
                     </div>
+                    <div class="ui padded vertical segment m-padded-td-large">
+                        <div class="ui grid stackable mobile reversed">
+                            <div class="eleven wide column">
+                                <!--博客标题-->
+                                <h3 class="ui header">你能感受到痛苦吗</h3>
+                                <!--博客内容摘要-->
+                                <p class="m-text">很多球迷都说库里的职业生涯是完美的，在自己的巅峰期遇到了科尔这样优秀的教练，还拥有汤普森、格林和杜兰特这么多优秀的队友，在这些人的共同努力下他们一起赢得了三个总冠军，那几年的NBA就是勇士这支球队的天下。但也有一些人表示库里的职业生涯</p>
+                                <div class="ui grid">
+                                    <div class="ui eleven wide column">
+                                        <!--link list 组件默认是竖起来的，horizontal表示水平的，其子组件包含一个item的属性-->
+                                        <div class="ui horizontal mini link list">
+                                            <div class="item">
+                                                <img src="https://picsum.photos/id/1001/100/150" class="ui avatar image">
+                                                <div class="ui content"><div class="ui header m-text-size">Holic</div> </div>
+                                            </div>
+                                            <div class="item"><i class="icon calendar"></i>2020-02-15 </div>
+                                            <div class="item"><i class="eye icon"></i>200 </div>
+                                        </div>
+                                    </div>
+                                    <div class="ui right aligned five wide column">
+                                        <a href="#" target="_blank" class="ui label teal basic m-padded-mini m-text-thin">认知提升</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="five wide middle aligned column">
+                                <a href="#" target="_blank">
+                                    <img src="https://picsum.photos/id/1001/800/450" class="ui rounded image">
+                                </a>
+                            </div>
+                        </div>
                     </div>
+                </div>
                 <!--底部横条-->
                 <div class="ui attached segment">
                     <div class="ui  middle aligned two column grid">
@@ -248,26 +254,98 @@
             </div>
 
             <!--右边部分-->
-            <div class="five wide column">
-                    <div class="ui segment">
-
+            <div class="five wide column ">
+                <!--分类-->
+                <div class="ui segments ">
+                    <div class="ui segment secondary">
+                        <div class="ui two column grid">
+                            <div class="column"><i class="idea icon"></i>分类 </div>
+                            <div class="column right aligned"><a href="#" target="_blank" >more<i class="angle double right icon"></i> </a> </div>
+                        </div>
+                    </div>
+                    <div class="ui segment teal">
+                        <div class="ui fluid vertical menu">
+                            <!--item元素包含的元素会自动分散在两边-->
+                            <a href="#"  class="item">学习日志
+                                <div class="ui teal left pointing basic label">13</div>
+                            </a>
+                            <a href="#"  class="item">学习日志
+                                <div class="ui teal left pointing basic label">13</div>
+                            </a>
+                            <a href="#"  class="item">学习日志
+                                <div class="ui teal left pointing basic label">13</div>
+                            </a>
+                            <a href="#"  class="item">学习日志
+                                <div class="ui teal left pointing basic label">13</div>
+                            </a>
+                            <a href="#"  class="item">学习日志
+                                <div class="ui teal left pointing basic label">13</div>
+                            </a>
+                            <a href="#"  class="item">学习日志
+                                <div class="ui teal left pointing basic label">13</div>
+                            </a>
+                        </div>
                     </div>
                 </div>
+                <!--标签-->
+                <div class="ui segments m-margin-top ">
+                    <div class="ui segment secondary">
+                        <div class="ui two column grid">
+                            <div class="column"><i class="tags icon"></i>标签</div>
+                            <div class="column right aligned"><a href="#" target="_blank" >more<i class="angle double right icon"></i> </a> </div>
+                        </div>
+                    </div>
+                    <div class="ui segment teal">
+                        <a href="#" target="_blank" class="ui teal left pointing basic label m-margin-tb-mini">方法论<div class="detail">23</div> </a>
+                        <a href="#" target="_blank" class="ui teal left pointing basic label m-margin-tb-mini">方法论<div class="detail">23</div> </a>
+                        <a href="#" target="_blank" class="ui teal left pointing basic label m-margin-tb-mini">方法论<div class="detail">23</div> </a>
+                        <a href="#" target="_blank" class="ui teal left pointing basic label m-margin-tb-mini">方法论<div class="detail">23</div> </a>
+                        <a href="#" target="_blank" class="ui teal left pointing basic label m-margin-tb-mini">方法论<div class="detail">23</div> </a>
+                        <a href="#" target="_blank" class="ui teal left pointing basic label m-margin-tb-mini">方法论<div class="detail">23</div> </a>
+                        <a href="#" target="_blank" class="ui teal left pointing basic label m-margin-tb-mini">方法论<div class="detail">23</div> </a>
+                    </div>
+                </div>
+                <!--最新推荐-->
+                <div class="ui segments m-margin-top ">
+                    <div class="ui segment secondary">
+                        <i class="bookmark icon"></i>最新推荐</div>
+                    <div class="ui segment">
+                        <a href="#" target="_blank" class="m-black m-text-thin">用户故事</a>
+                    </div>
+                    <div class="ui segment">
+                        <a href="#" target="_blank" class="m-black m-text-thin">用户故事</a>
+                    </div>
+                    <div class="ui segment">
+                        <a href="#" target="_blank" class="m-black m-text-thin">用户故事</a>
+                    </div>
+                    <div class="ui segment">
+                        <a href="#" target="_blank" class="m-black m-text-thin">用户故事</a>
+                    </div>
+                </div>
+                <!--二维码-->
+                <h4 class="ui horizontal divider header m-margin-top ">扫码关注我</h4>
+                <!--Style要放在card组件的属性里才能保证框框包裹着图片，放在img的属性里只能改大小，card组件的框框不会完整包裹图片-->
+                <div class="ui card centered aligned"  style="width: 11em">
+                    <img src="./static/images/20200515232857.jpg" class="ui rounded image middle aligned">
+                </div>
+            </div>
 
         </div>
     </div>
 </div>
-
+<br>
+<br>
+<br>
 <!--底部-->
 <footer class="ui inverted vertical segment m-padded-td-max">
     <div class="ui center aligned container">
         <!--semantic UI 将一个块划分为16份,divided属性是每列间的分割线-->
-        <div class="ui  inverted divided grid">
+        <div class="ui  inverted divided stackable grid">
             <!--一个column是一列，共分为4列-->
             <div class="three wide column ">
                 <div class="ui inverted   link item">
                     <div class="item ">
-                        <img src="./static/images/20200515232857.jpg" class=" middle aligned ui rounded image"  style="width: 100px ">
+                        <img src="./static/images/20200515232857.jpg" class=" ui rounded image centered aligned"  style="width: 100px ">
                     </div>
                 </div>
             </div>
@@ -293,15 +371,17 @@
             </div>
         </div>
         <div class="ui inverted section divider">
-            <p class="m-text-thin m-text-spaced m-opacity-mini">Designed, developed, and maintained by:</p>
+            <p class="m-text-thin m-text-spaced m-opacity-tiny">Designed, developed, and maintained by:</p>
         </div>
     </div>
 </footer>
 
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+<script>
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+</script>
 </body>
 </html>
