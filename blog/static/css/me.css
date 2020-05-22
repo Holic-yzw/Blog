@@ -12,6 +12,10 @@ body{
     padding: 0.2em !important;
 }
 
+.m-padded-middle{
+    padding: 1em !important;
+}
+
 .m-padded-td-mini{
 /*一个em是14个像素*/
 padding-top: 0.2em !important;
@@ -113,6 +117,15 @@ padding-top: 0.2em !important;
     right: 0;
 }
 
+.m-fixed{
+    position: fixed !important;
+    z-index: 1!important;
+}
+
+.m-right-bottom{
+    bottom: 0 !important;
+    right: 0 !important;
+}
 /*宽屏不展示*/
 .m-mobile-show{
     display: none !important;
