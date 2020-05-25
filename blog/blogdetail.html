@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="./static/css/typo.css">
     <!--代码高亮插件-->
     <link href="./static/lib/prism/prism.css" rel="stylesheet">
+    <!--目录生成插件-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.css">
     <!--引用自定义的css-->
     <link rel="stylesheet" href="./static/css/me.css">
 </head>
@@ -58,7 +60,7 @@
             <!--图片区 https://picsum.photos/id/1001/800/450  -->
             <img src="./static/images/20200220205316.jpg" class="ui fluid image rounded" >
         </div>
-        <div class="ui segment padded attached">
+        <div class="ui segment padded attached " >
             <!--博客正文-->
             <!--标签-->
             <div class="ui segment basic right aligned">
@@ -66,7 +68,7 @@
             </div>
             <h2 class="ui centered aligned header">你能感觉到痛苦吗</h2>
             <br>
-            <div id="content" class="m-padded-landr-responsive typo typo-selection">
+            <div id="content" class="m-padded-landr-responsive typo typo-selection js-toc-content">
                 <h2 id="tagline" class="serif">一致化浏览器排版效果，构建最适合中文阅读的网页排版</h2>
 
                 <ol id="table">
@@ -583,11 +585,16 @@ h5,h6{font-size:1em;}
 </div>
 <div class="m-fixed m-right-bottom m-padded-middle">
     <div class="ui vertical icon buttons  ">
-        <button type="button" class="ui teal button">目录</button>
+        <button type="button" class="ui teal button toc-catalogue" >目录</button>
         <a href="#comment" class="ui teal button">留言</a>
         <button class="ui icon button"><i class="weixin icon"></i></button>
         <a href="#" class="ui icon button"><i class="chevron up icon"></i></a>
     </div>
+</div>
+<div class="ui flowing popup transition hidden catalogue">
+    <ol class="js-toc">
+
+    </ol>
 </div>
 <br>
 <br>
@@ -635,6 +642,7 @@ h5,h6{font-size:1em;}
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
 <script src="./static/lib/prism/prism.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.min.js"></script>
 <script>
     $('.menu.toggle').click(function () {
         $('.m-item').toggleClass('m-mobile-hide');
@@ -647,6 +655,25 @@ h5,h6{font-size:1em;}
         on : ('click'),
         /*弹出位置*/
         position : ('bottom center')
+    });
+
+    // 目录初始化
+    tocbot.init({
+        // Where to render the table of contents.在哪生成
+        tocSelector: '.js-toc',
+        // Where to grab the headings to build the table of contents.从哪生成
+        contentSelector: '.js-toc-content',
+        // Which headings to grab inside of the contentSelector element.级别
+        headingSelector: 'h1, h2, h3',
+        // For headings inside relative or absolute positioned containers within content.
+        hasInnerContainers: true,
+    });
+    $('.toc-catalogue').popup({
+        popup : $('.catalogue.popup'),
+        /*触发条件：默认是鼠标移上去就弹出，现在改为点击才弹出*/
+        on : ('click'),
+        /*弹出位置*/
+        position : ('left center')
     });
 </script>
 </body>
