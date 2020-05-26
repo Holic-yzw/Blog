@@ -158,5 +158,18 @@ padding-top: 0.2em !important;
     }
 }
 
+/*目录适配*/
+.toc-list li a{
+    display: block !important;
+    padding: 4px 0!important;
+    font-weight: 300!important;
+}
 
+.toc-list li a:hover{
+    color: teal;
+}
+
+.toc-link::before{
+    height: 20px;!important;
+}
 
