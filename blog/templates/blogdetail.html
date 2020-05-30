@@ -44,7 +44,7 @@
 <!--中间内容-->
 <!--动画使用：After installing Animate.css, add the class animate__animated to an element,
                            along with any of the animation names (don't forget the animate__ prefix!)     -->
-<div id="waypoint" class=" m-container-blog m-padded-td-large animate__animated animate__fadeIn">
+<div  id="waypoint" class=" m-container-blog m-padded-td-large animate__animated animate__fadeIn">
     <div class="ui container ">
         <div class="ui segment top attached">
             <div class="ui horizontal  link list">
@@ -583,18 +583,21 @@ h5,h6{font-size:1em;}
         </div>
     </div>
 </div>
-<div class="m-fixed m-right-bottom m-padded-middle" style="display: none" id="toolbar">
+<div class="m-fixed m-right-bottom m-padded-middle " style="display: none" id="toolbar">
     <div class="ui vertical icon buttons  ">
         <button type="button" class="ui teal button toc-catalogue" >目录</button>
         <a href="#comment" class="ui teal button">留言</a>
         <button class="ui icon button"><i class="weixin icon"></i></button>
-        <div id="toTop" class="ui icon button"><i class="chevron up icon"></i></div>
+        <div id="toTop"  class="ui icon button"><i class="chevron up icon"></i></div>
     </div>
 </div>
 <div class="ui flowing popup transition hidden catalogue " style="width: 250px!important;">
     <ol class="js-toc">
 
     </ol>
+</div>
+<div  id="qrcode" class="ui flowing popup transition hidden weixin">
+
 </div>
 <br>
 <br>
@@ -643,16 +646,13 @@ h5,h6{font-size:1em;}
 <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
 <script src="../static/lib/prism/prism.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.min.js"></script>
-
-
-
+<script src="./static/lib/qrcode/qrcode.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script><!--平滑滚动插件-->
 <script src="../static/lib/waypoints/jquery.waypoints.min.js"></script><!--滚动侦测，当滑动到某个位置时显示小工具条-->
 <script>
     $('.menu.toggle').click(function () {
         $('.m-item').toggleClass('m-mobile-hide');
     });
-
     /*鼠标点击赞赏弹出二维码*/
     $('#payButton').popup({
         popup : $('.pay.popup'),
@@ -680,17 +680,24 @@ h5,h6{font-size:1em;}
         /*弹出位置*/
         position : ('left center')
     });
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+    $('.weixin.icon').popup({
+        /*要弹出的内容*/
+        popup : $('.weixin.popup'),
+        /*弹出位置*/
+        position : ('left center')
+    });
+
+    // 生成二维码
+    var qrcode = new QRCode("qrcode", { // 第一个参数是承载生成的二维码的元素的ID
+        text: "http://jindo.dev.naver.com/collie",
+        width: 128,
+        height: 128,
+        colorDark : "#000000",
+        colorLight : "#ffffff",
+        correctLevel : QRCode.CorrectLevel.H
+    });
+
     //平滑滚动
     $('#toTop').click(function () {
         $(window).scrollTo(0,500); // 0表示滑倒顶端，500表示用时500MS完成滑动
@@ -707,6 +714,7 @@ h5,h6{font-size:1em;}
             console.log('Scrolled to waypoint!');
         }
     });
+
 </script>
 </body>
 </html>
